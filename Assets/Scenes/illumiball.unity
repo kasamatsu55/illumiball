@@ -696,7 +696,11 @@ GameObject:
   - component: {fileID: 669558656}
   - component: {fileID: 669558655}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: GravityController
+=======
+  m_Name: GameObject
+>>>>>>> origin/master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
