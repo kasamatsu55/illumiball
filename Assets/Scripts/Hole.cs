@@ -6,6 +6,28 @@ public class Hole : MonoBehaviour
 {
     //どのボールを吸い寄せるかをタグで指定
     public string targetTag;
+    bool isHolding;
+
+    public bool IsHolding()
+    {
+        return isHolding;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == targetTag)
+        {
+            isHolding = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == targetTag)
+        {
+            isHolding = false;
+        }
+    }
 
     void OnTriggerStay(Collider other)
     {
@@ -25,7 +47,8 @@ public class Hole : MonoBehaviour
         }
         else
         {
-            r.AddForce(direction * 80.0f, ForceMode.Acceleration);
+            //r.AddForce(direction * 80.0f, ForceMode.Acceleration); //じわじわ
+            r.AddForce(direction * 20.0f, ForceMode.Impulse); //瞬間的に
         }
     }
         
